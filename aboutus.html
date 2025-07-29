@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oplin Bot | من نحن</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="images/Oplin Image.jpg">
+    <style>
+        :root {
+            --primary-color: #5b278b;
+            --secondary-color: #381c45;
+            --accent-color: #ffffff;
+            --text-color: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        body {
+            background-color: #4e1e5e;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+        
+        .about-header {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .about-header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        .about-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .floating-bots {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            opacity: 0.1;
+        }
+        
+        .bot-icon {
+            position: absolute;
+            font-size: 2rem;
+            animation: float 6s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        .about-content {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        
+        .mission-vision {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .card {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(47, 49, 54, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 3px solid var(--primary-color);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        .card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+        
+        .team-section {
+            text-align: center;
+            margin: 80px 0;
+        }
+        
+        .team-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .team-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .team-card {
+            width: 250px;
+            background: rgba(47, 49, 54, 0.7);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .team-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .team-img {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .team-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.8));
+        }
+        
+        .team-info {
+            padding: 20px;
+        }
+        
+        .team-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+        
+        .team-info p {
+            color: #B9BBBE;
+            font-size: 0.9rem;
+        }
+        
+        .social-links {
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            color: var(--text-color);
+            margin: 0 5px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .stats-section {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            padding: 80px 20px;
+            text-align: center;
+            margin: 80px 0;
+        }
+        
+        .stats-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .stat-item {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+        
+        .stat-label {
+            font-size: 1.2rem;
+        }
+        
+        .join-community {
+            text-align: center;
+            margin: 80px 0;
+        }
+        
+        .join-community h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .join-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--primary-color);
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            transition: all 0.3s;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(88, 101, 242, 0.4);
+        }
+        
+        .join-btn:hover {
+            background: #4752C4;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(88, 101, 242, 0.6);
+        }
+        
+        /* أنيميشن مخصصة */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        
+        /* التكيف مع الأجهزة المحمولة */
+        @media (max-width: 768px) {
+            .about-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .mission-vision {
+                flex-direction: column;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="about-header">
+        <div class="floating-bots">
+            <i class="fas fa-robot bot-icon" style="top: 20%; left: 10%; animation-delay: 0s;"></i>
+            <i class="fas fa-code bot-icon" style="top: 70%; left: 15%; animation-delay: 1s;"></i>
+            <i class="fas fa-cog bot-icon" style="top: 30%; left: 80%; animation-delay: 2s;"></i>
+            <i class="fas fa-microchip bot-icon" style="top: 80%; left: 85%; animation-delay: 3s;"></i>
+        </div>
+        <h1 class="animate__animated animate__fadeInDown">من نحن؟</h1>
+        <p class="animate__animated animate__fadeIn animate__delay-1s">نحن مطورين بوتات ديسكورد. وايضا لدى السيرفر بوت خاص فيه وهو اوبلين بوت !! </p>
+    </section>
+    
+    <section class="about-content">
+        <div class="mission-vision">
+            <div class="card animate-fadeInUp">
+                <i class="fas fa-bullseye"></i>
+                <h2>رؤيتنا</h2>
+                <p>نحن نطمح النجاح المبهر </p>
+            </div>
+            
+            <div class="card animate-fadeInUp delay-1">
+                <i class="fas fa-rocket"></i>
+                <h2>مهمتنا</h2>
+                <p>تطوير بوتات بمواصفات عالية الجودة، سهلة الاستخدام وقابلة للتخصيص حسب احتياجات كل سيرفر، مع توفير دعم فني مميز واطلاقات مستمرة لتطوير الأداء والإمكانيات.</p>
+            </div>
+            
+            <div class="card animate-fadeInUp delay-2">
+                <i class="fas fa-star"></i>
+                <h2>قيمنا</h2>
+                <p>الإبداع، الجودة، الشفافية، العمل الجماعي، التطوير المستمر، ورضا العملاء هي القيم الأساسية التي نؤمن بها ونسعى لتحقيقها في كل منتجاتنا وخدماتنا.</p>
+            </div>
+        </div>
+        
+        <div class="team-section">
+            <h2 class="animate__animated animate__fadeIn">فريقنا المبدع</h2>
+            
+            <div class="team-members">
+                <div class="team-card animate-fadeInUp">
+                    <div class="team-img" style="background-image: url('images/صورتي\ دسكورد.png');"></div>
+                    <div class="team-info">
+                        <h3> فيصل العتيبي</h3>
+                        <p>مطور رئيسي</p>
+                        <div class="social-links">
+                            <a href="https://x.com/FSL22F"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-discord"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-card animate-fadeInUp delay-1">
+                    <div class="team-img" style="background-image: url('images/صورة\ عبد\ الله.png');"></div>
+                    <div class="team-info">
+                        <h3>عبد الله العتيبي</h3>
+                        <p>مبرمج بوتات وخبير ديسكورد</p>
+                        <div class="social-links">
+                            <a href="Ab.html"><i class="fab fa-discord"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stats-section animate__animated animate__fadeIn">
+            <div class="stats-container">
+
+                <div class="stat-item">
+                    <div class="stat-number" data-count="24">0</div>
+                    <div class="stat-label">ساعة دعم</div>
+                </div>
+                
+            </div>
+        </div>
+
+        
+        
+        <div class="join-community animate__animated animate__fadeIn">
+            <h2>انضم إلى مجتمعنا</h2>
+            <p style="max-width: 800px; margin: 0 auto 30px; line-height: 1.6;">نحن نؤمن بقوة المجتمع ودوره في تطوير منتجاتنا. انضم إلى سيرفر الديسكورد الخاص بنا لتكون جزءاً من رحلتنا، شاركنا أفكارك واستمتع بأحدث الميزات قبل الجميع!</p>
+            <a href="https://discord.gg/fCcemGxa2K" class="join-btn animate__animated animate__pulse animate__infinite">انضم الآن <i class="fab fa-discord"></i></a>
+        </div>
+    </section>
+
+    <script>
+        // أنيميشن الأرقام
+        function animateStats() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-count'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const updateCount = () => {
+                    current += step;
+                    if (current < target) {
+                        stat.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCount);
+                    } else {
+                        stat.textContent = target;
+                    }
+                };
+                
+                updateCount();
+            });
+        }
+        
+        // تشغيل الأنيميشن عند التمرير للقسم
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observer.observe(document.querySelector('.stats-section'));
+        
+        // إضافة تأثيرات عند التمرير
+        const animateElements = document.querySelectorAll('.animate-fadeInUp');
+        
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                    scrollObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        animateElements.forEach(el => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            scrollObserver.observe(el);
+        });
+    </script>
+</body>
+</html>
