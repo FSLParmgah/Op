@@ -6,7 +6,7 @@
     <title>Oplin Bot | الصفحة الرئيسية</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="https://raw.githubusercontent.com/FSLParmgah/OplinBot/refs/heads/main/images/Oplin%20Image.jpg">
+    <link rel="icon" href="images/Oplin Image.jpg">
     <style>
         :root {
             --primary-color: #ac69ec;
@@ -14,6 +14,8 @@
             --accent-color: #7924e9;
             --text-color: #FFFFFF;
             --dark-bg: #202225;
+            --online-color: #3ba55c;
+            --offline-color: #ed4245;
         }
         
         * {
@@ -28,6 +30,42 @@
             color: var(--text-color);
             overflow-x: hidden;
             line-height: 1.6;
+        }
+        
+        /* زر حالة السيرفر */
+        .server-status {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: rgba(47, 49, 54, 0.9);
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            border: 2px solid var(--online-color);
+        }
+        
+        .server-status:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-left: 1px;
+            background-color: var(--online-color);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
         }
         
         header {
@@ -181,10 +219,23 @@
                 max-width: 300px;
                 justify-content: center;
             }
+            
+            .server-status {
+                top: 10px;
+                left: 10px;
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- زر حالة السيرفر -->
+    <div class="server-status animate__animated animate__fadeInDown">
+        <span> حالة البوت </span>
+        <div class="status-indicator" id="serverStatus"></div>
+    </div>
+
     <header>
         <div class="floating-bots">
             <i class="fas fa-robot bot-icon" style="top: 20%; left: 10%; animation-delay: 0s;"></i>
@@ -220,8 +271,6 @@
                 <h3>حماية متكاملة</h3>
                 <p>نظام حماية متقدم ضد السبام والمخترقين مع إمكانية تخصيص الإعدادات حسب احتياجاتك</p>
             </div>
-            
-            
             
             <div class="feature-card">
                 <i class="fas fa-gamepad"></i>
@@ -269,6 +318,15 @@
             card.style.transition = `opacity 0.6s ease-out ${index * 0.1}s, transform 0.6s ease-out ${index * 0.1}s`;
             observer.observe(card);
         });
+        
+          
+
+         
+        
+        
+        // تحديث حالة السيرفر عند التحميل وبشكل دوري
+        updateServerStatus();
+        setInterval(updateServerStatus, 30000); // التحقق كل 30 ثانية
     </script>
 </body>
 </html>
