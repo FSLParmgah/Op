@@ -32,35 +32,7 @@
             line-height: 1.6;
         }
         
-        /* زر حالة السيرفر */
-        .server-status {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-            background: rgba(47, 49, 54, 0.9);
-            padding: 10px 20px;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            border: 2px solid var(--online-color);
-        }
-        
-        .server-status:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .status-indicator {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            margin-left: 1px;
-            background-color: var(--online-color);
-            animation: pulse 2s infinite;
-        }
+    
         
         @keyframes pulse {
             0% { opacity: 1; }
@@ -230,11 +202,8 @@
     </style>
 </head>
 <body>
-    <!-- زر حالة السيرفر -->
-    <div class="server-status animate__animated animate__fadeInDown">
-        <span> حالة البوت </span>
-        <div class="status-indicator" id="serverStatus"></div>
-    </div>
+  
+  
 
     <header>
         <div class="floating-bots">
